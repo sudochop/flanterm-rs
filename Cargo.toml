@@ -1,0 +1,20 @@
+[package]
+name = "flanterm"
+version = "0.0.1"
+edition = "2024"
+authors = ["Julian Scheffers <julian@scheffers.net>"]
+license = "MIT"
+readme = "README.md"
+categories = ["no-std"]
+repository = "https://github.com/robotman2412/limine-boot-rust"
+description = "Rust bindings for the Flanterm VT-100 emulator"
+
+[lib]
+crate-type = ["rlib"]
+
+[features]
+default = ["alloc"]
+alloc = []
+
+[build-dependencies]
+cc = "1.2.66"
