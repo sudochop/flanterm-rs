@@ -49,7 +49,7 @@ impl<'a> FlantermFb<'a> {
     ) -> Option<Self> {
         unsafe {
             assert!(
-                framebuffer.len() >= height * pitch,
+                framebuffer.len() >= (height * pitch).div_ceil(size_of::<u32>()),
                 "FlantermFb::new(): framebuffer is not large enough given its height and pitch"
             );
             if let Some(background) = background {
